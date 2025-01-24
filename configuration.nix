@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -10,7 +10,6 @@
       ./T460-hardware.nix
       ./common-configuration.nix
       ./vim.nix
-      home-manager.nixosModules.home-manager
     ];
 
 
@@ -30,7 +29,6 @@
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

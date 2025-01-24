@@ -79,8 +79,8 @@
   #services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  #sound.enable = true;
+  #hardware.pulseaudio.enable = true;
 
   programs.zsh.enable = true;
 
@@ -105,7 +105,7 @@
     users.tassilo = { 
 
 	programs.zsh.enable = true;
-    	imports = [ /home/tassilo/nix-config/home.nix ]; 
+    	imports = [ ./home.nix ]; 
 	home.stateVersion = "24.05";
     };
   };
