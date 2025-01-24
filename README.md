@@ -1,4 +1,11 @@
+# Info
+This is my nixos configuration for my T460 Thinkpad. 
 
+# Installation
+
+```sh
+sudo nixos-rebuild switch --flake .#nixos
+```
 
 
 # Background info
