@@ -24,6 +24,7 @@
     zsh-autosuggestions
     zsh-syntax-highlighting
     trash-cli
+    discord
   ];
 
   programs = {
