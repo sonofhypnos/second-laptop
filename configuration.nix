@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./T460-hardware.nix
       ./common-configuration.nix
       ./vim.nix
       <home-manager/nixos>
