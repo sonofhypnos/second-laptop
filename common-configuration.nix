@@ -79,7 +79,7 @@
   #services.printing.enable = true;
 
   # Enable sound.
-  #sound.enable = true;
+  sound.enable = true;
   #hardware.pulseaudio.enable = true;
 
   programs.zsh.enable = true;
