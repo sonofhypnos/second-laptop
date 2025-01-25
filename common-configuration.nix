@@ -12,6 +12,7 @@
     "1password-gui"
     "1password"
     "1password-cli"
+    "discord"
   ];
 
   programs._1password.enable = true;
