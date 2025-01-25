@@ -75,5 +75,8 @@
     };
 
   };
-
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+    DEFAULT_TERMINAL = "kitty";
+  };
 }
