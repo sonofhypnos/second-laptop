@@ -145,7 +145,6 @@
     nettools
     xclip #Without xclip, neovim has no clipboard
     rxvt-unicode-unwrapped
-    dropbox
   ];
   fonts.packages = with pkgs; [
     hermit

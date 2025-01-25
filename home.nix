@@ -25,6 +25,7 @@
     zsh-syntax-highlighting
     trash-cli
     discord
+    dropbox
   ];
 
   programs = {
