@@ -21,7 +21,7 @@
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     #polkitPolicyOwners = [ "tassilo" ];
-  };
+ };
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -142,9 +142,17 @@
     parted
     borgbackup
     nettools
-    kitty
     xclip #Without xclip, neovim has no clipboard
+    rxvt-unicode-unwrapped
   ];
+  fonts.packages = with pkgs; [
+    hermit
+    source-code-pro
+    terminus_font
+  ];
+
+  
+  environment.variables.TERMINAL = "urxvt";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
