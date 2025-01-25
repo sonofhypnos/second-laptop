@@ -13,6 +13,7 @@
     "1password"
     "1password-cli"
     "discord"
+    "dropbox"
   ];
 
   programs._1password.enable = true;
@@ -144,6 +145,7 @@
     nettools
     xclip #Without xclip, neovim has no clipboard
     rxvt-unicode-unwrapped
+    dropbox
   ];
   fonts.packages = with pkgs; [
     hermit
@@ -172,5 +174,6 @@
     #package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
   };
+
 
 }
