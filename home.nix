@@ -20,7 +20,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
-    python
+    python3
     htop
     zsh-autosuggestions
     zsh-syntax-highlighting
