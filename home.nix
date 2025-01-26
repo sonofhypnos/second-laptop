@@ -20,6 +20,8 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
+    chrome
+    ranger
     python3
     htop
     zsh-autosuggestions
