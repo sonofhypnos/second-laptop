@@ -26,6 +26,7 @@
     trash-cli
     discord
     dropbox
+    emacs
   ];
 
   programs = {
