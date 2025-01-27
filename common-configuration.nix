@@ -7,6 +7,12 @@
 {
   #todo: test eve (forgot what that is)
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d -d";
+  };
+
   # Enable the unfree 1Password packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "1password-gui"
