@@ -14,6 +14,7 @@
     "1password-cli"
     "discord"
     "dropbox"
+    "google-chrome"
   ];
 
   programs._1password.enable = true;
