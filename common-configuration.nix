@@ -107,7 +107,8 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tassilo = {
+  users.users = {
+    tassilo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
 
@@ -117,7 +118,13 @@
 	      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLSQ/5TgxGqerDlA+CCHY/NrLkonlVSgI9cbkgrsHsAQAe8kS7tvBZpTFhZyYYQz0O3x70IF1NYD0ZJ/DjOyPzQZXr3efA0EYwisRF83A7AAhhBUs2jxcbHeTwgEYg9cboCPw97dJPfAhAjC+8SE6DMUJT2Fvyxb9fyKUxhzd6CI0KKm3MlO4qwOXyA/RM/4xtnIgO+lYvZ7OZmluSQi9DU2UyCvHads/YlPGbnKmw888Sc7QhqE3eq42lSU7995aZDF0kH4qcoXmV8ugRJ+5OKRRgFkcky8j6r/LkYaK4HHe4Qa3CSBJjQHOmd7Vfu51LJfedfTWJaOfuvEgYV69c2xc0Iwbi2VDNfGSS/9LWxh+H2GbMllIp+lKlZtASQfvgMPSfLgRa+cbhcwwwcV58Qrk3QdED6ESQL7kZmuIyVWSAzBbHsb12O6SgGIQiLsGiqcUWKRwudH4iw1jWWtvb0WJxeUbqKglPjMMCYRg57ym+LhMmNiF5ydjLrJHyogM= tassilo@t-dell"
 	      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCQSROiZcNSIT0jynq6EXEa6ne9ApY0OUfh96qLBDL4pUsFW3KhHouiC9weQp31QXxckTC7rdvSNe6YkchrpT0KHi/tkTmgAoYX9pQv0guYUymOinj95Q+PJYMviotRzVlpB01GcZ/XlTaUZZV0HgUlto8TiMX2ILAbxvHzo1a0GNUw4xBBEZvOg2xSL26rcogqKibMv9jothkEVLRHydrNWzGZtXopOk1eGXh6qOl8bVB38XuZK3AHyqJtfUZb5Zj8nkKPrHn9spVpyt8J4xb43tTHKvtwWGWTTZixZBBUgugHAhgQIAaP/3T0Dw2gndPsyhmqZeO0Iy6Lv9r1fsUxzgh2PPjjmP/AZtphU9lCGx7Gy6+FahsYlXPPGEZRljn64jN9v4u15xTx6cmn0LuxvTrntM6p+ruIPzWVrNK/4XQwFjlbDO1UD/ToePoUaKtNR5AngeeTp/9/wObmfwolJQgx4miq/Jvsdx0+FlIX8hzAU4hjDMFNd1UonI/9f3M= root@tassilo-ThinkPad-E15-Gen-2"
 	    ];
+    };
+    natalie = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+    };
   };
+
 
   home-manager = {
     useGlobalPkgs = true;
