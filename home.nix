@@ -33,6 +33,24 @@
     discord
     dropbox
     emacs
+    (python3Packages.buildPythonApplication {
+      pname = "git-remote-dropbox";
+      version = "1.0.2";  # Update this to the latest version
+
+      src = pkgs.fetchFromGitHub {
+        owner = "anishathalye";
+        repo = "git-remote-dropbox";
+        rev = "v1.0.2";  # Update this to match version
+        sha256 = ""; # Add SHA256 after first attempt
+      };
+
+      propagatedBuildInputs = with python3Packages; [
+        dropbox
+        setuptools
+      ];
+
+      doCheck = false;  # Skip tests as they might require Dropbox credentials
+    })
   ];
 
   programs = {
