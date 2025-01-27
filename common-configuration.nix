@@ -177,7 +177,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.passwordAuthentication = true;
+  services.openssh.settings.PasswordAuthentication = true;
   services.openssh.enable = true;
 
   nix = {
