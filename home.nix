@@ -21,7 +21,7 @@
   # changes in each release.
   home.packages = with pkgs; [
     zathura
-    chrome
+    google-chrome
     ranger
     python3
     htop
