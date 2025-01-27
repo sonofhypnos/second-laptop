@@ -59,29 +59,33 @@
 
   environment.pathsToLink=["/libexec"];
 
-  # Enable the X11 windowing system.
-  services.xserver={
-  enable = true;
+  services = {
+    libinput.enable = true;
 
-  # Configure keymap in X11
-  layout = "de";
-  xkbVariant = "neo_qwertz";
+    displayManager={defaultSession="none+i3";};
 
-  desktopManager={xterm.enable=false;};
+    xserver={
+      enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  libinput.enable = true;
-  displayManager={defaultSession="none+i3";};
-  windowManager.i3={
-  enable=true;
-  extraPackages=with pkgs;[
-  dmenu
-  i3status
-  i3lock
-  i3blocks];
+      # Configure keymap in X11
+      xkb.layout = "de";
+      xkb.variant = "neo_qwertz";
+
+      desktopManager={xterm.enable=false;};
+
+      # Enable touchpad support (enabled default in most desktopManager).
+      windowManager.i3={
+        enable=true;
+        extraPackages=with pkgs;[
+        dmenu
+        i3status
+        i3lock
+        i3blocks];
+        };
+    };
   };
-  };
-  
+
+
 
 
   # Enable CUPS to print documents.
