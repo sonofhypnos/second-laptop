@@ -21,6 +21,7 @@
   # changes in each release.
   home.packages = with pkgs; [
     zotero
+    signal-desktop
     zathura
     google-chrome
     ranger
