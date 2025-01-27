@@ -20,6 +20,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
+    zotero
     zathura
     google-chrome
     ranger
