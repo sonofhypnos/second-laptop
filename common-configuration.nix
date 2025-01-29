@@ -68,8 +68,11 @@
       enable = true;
 
       # Configure keymap in X11
-      xkb.layout = "de";
-      xkb.variant = "neo_qwertz";
+      xkb = {
+        layout = "de,de";
+        variant = ",neo_qwertz";
+        options = "grp:win_space_toggle";
+      };
 
       desktopManager={xterm.enable=false;};
 
@@ -121,7 +124,7 @@
     };
     natalie = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = ["wheel" ];
     };
   };
 
