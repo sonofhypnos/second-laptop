@@ -13,6 +13,8 @@
       modules = [
 #        ./T460-hardware.nix
         ./configuration.nix
+        ./common-configuration.nix
+        ./vim.nix
         home-manager.nixosModules.home-manager
       ];
     };
