@@ -76,15 +76,16 @@
       desktopManager={
         xterm.enable=false;
         plasma5.enable=true;
-    };
+     };
+
       displayManager = {
         ssddm.enable = true;
         defaultSession = "none+i3";
-      }
+      };
 
 
       # Enable touchpad support (enabled default in most desktopManager).
-      windowManager.i3={
+      windowManager.i3 = {
         enable=true;
         extraPackages=with pkgs;[
         dmenu
