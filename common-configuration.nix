@@ -126,6 +126,11 @@
       isNormalUser = true;
       extraGroups = ["wheel" ];
     };
+
+    leo = {
+      isNormalUser = true;
+      extraGroups = ["wheel" ];
+    };
   };
 
 
