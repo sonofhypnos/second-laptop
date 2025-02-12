@@ -144,6 +144,7 @@
     };
 
     users.leo = {
+      imports = [./leo.nix];
       home.stateVersion = "24.05";
       xsession.enable = true;
       xsession.windowManager.command = "startplasma-x11";
