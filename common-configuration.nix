@@ -68,8 +68,8 @@
 
       # Configure keymap in X11
       xkb = {
-        layout = "de,de";
-        variant = ",neo_qwertz";
+        layout = "de,us,de";
+        variant = ",, neo_qwertz";
         options = "grp:win_space_toggle";
       };
 
