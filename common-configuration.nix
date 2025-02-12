@@ -151,6 +151,12 @@
     	imports = [ ./home.nix ]; 
 	home.stateVersion = "24.05";
     };
+
+    users.leo = {
+      home.stateVersion = "24.05";
+      xsession.enable=true;
+      xsession.windowManager.command = "startplasma-x11";
+    };
   };
 
   users.users.root = {
