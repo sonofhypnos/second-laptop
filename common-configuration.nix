@@ -62,7 +62,6 @@
   services = {
     libinput.enable = true;
 
-    displayManager={defaultSession="none+i3";};
 
     xserver={
       enable = true;
@@ -74,7 +73,15 @@
         options = "grp:win_space_toggle";
       };
 
-      desktopManager={xterm.enable=false;};
+      desktopManager={
+        xterm.enable=false;
+        plasma5.enable=true;
+    };
+      displayManager = {
+        ssddm.enable = true;
+        defaultSession = "none+i3";
+      }
+
 
       # Enable touchpad support (enabled default in most desktopManager).
       windowManager.i3={
