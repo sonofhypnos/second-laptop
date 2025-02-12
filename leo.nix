@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [
     firefox
-    plasma5Packages.discover
+    #plasma5Packages.discover # FIXME: Try this package again from the newest release?
     google-chrome
     # Add Leo-specific packages
   ];
