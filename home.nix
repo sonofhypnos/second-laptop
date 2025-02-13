@@ -3,9 +3,8 @@
 
 { config, lib, pkgs, ... }: {
 
-  imports = [
-	./1password.nix
-  ];
+  imports = [ ./1password.nix ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "tassilo";
@@ -36,13 +35,14 @@
     # The below is to install the repository git-remote-dropbox
     (python3Packages.buildPythonApplication {
       pname = "git-remote-dropbox";
-      version = "2.0.4";  # Update this to the latest version
+      version = "2.0.4"; # Update this to the latest version
 
       src = pkgs.fetchFromGitHub {
         owner = "anishathalye";
         repo = "git-remote-dropbox";
-        rev = "v2.0.4";  # Update this to match version
-        sha256 = "sha256-miA8lYfk77pXn5aWIh17uul1l+7w2VCBDT3+YiVK5OY="; # Add SHA256 after first attempt
+        rev = "v2.0.4"; # Update this to match version
+        sha256 =
+          "sha256-miA8lYfk77pXn5aWIh17uul1l+7w2VCBDT3+YiVK5OY="; # Add SHA256 after first attempt
       };
       format = "pyproject";
 
@@ -53,17 +53,15 @@
         setuptools
       ];
 
-
       propagatedBuildInputs = with python3Packages; [
         dropbox
         setuptools
         requests
       ];
 
-      doCheck = false;  # Skip tests as they might require Dropbox credentials
+      doCheck = false; # Skip tests as they might require Dropbox credentials
     })
   ];
-
 
   programs = {
     # Let Home Manager install and manage itself.
@@ -74,8 +72,6 @@
       userName = "Tassilo Neubauer";
       userEmail = "46806445+sonofhypnos@users.noreply.github.com";
     };
-
-      
 
     vim = {
       enable = true;
@@ -117,17 +113,13 @@
     TERMINAL = "kitty";
     DEFAULT_TERMINAL = "kitty";
   };
-    systemd.user.services.dropbox = {
-        Unit = {
-            Description = "Dropbox service";
-        };
-        Install = {
-            WantedBy = [ "default.target" ];
-        };
-        Service = {
-            ExecStart = "${pkgs.dropbox}/bin/dropbox";
-            Restart = "on-failure";
-        };
+  systemd.user.services.dropbox = {
+    Unit = { Description = "Dropbox service"; };
+    Install = { WantedBy = [ "default.target" ]; };
+    Service = {
+      ExecStart = "${pkgs.dropbox}/bin/dropbox";
+      Restart = "on-failure";
     };
+  };
 }
 

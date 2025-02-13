@@ -5,13 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./T460-hardware.nix
-      ./common-configuration.nix
-      ./vim.nix
-    ];
-
+  imports = [ # Include the results of the hardware scan.
+    ./T460-hardware.nix
+    ./common-configuration.nix
+    ./vim.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -21,9 +19,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # NOTE: to enable the wifi, type: "nmcli device wifi connect $wifiname password $password"
   networking = {
-  	hostName = "nixos"; # Define your hostname.
-	networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-	nameservers=["1.1.1.1" "8.8.8.8"];
+    hostName = "nixos"; # Define your hostname.
+    networkmanager.enable =
+      true; # Easiest to use and most distros use this by default.
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
