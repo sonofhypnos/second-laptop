@@ -33,7 +33,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "AEDT";
 
   nixpkgs.overlays = [
     (self: super: {
