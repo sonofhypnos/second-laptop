@@ -33,7 +33,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "AEDT";
+  time.timeZone = "Australia/Melbourne";
 
   nixpkgs.overlays = [
     (self: super: {
