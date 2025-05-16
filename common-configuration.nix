@@ -56,8 +56,10 @@
 
       # Configure keymap in X11
       xkb = {
-        layout = "us,de,de";
-        variant = ",, neo_qwertz";
+        # layout = "us,de,de"; NOTE: use the commented out version if you want to let your gf or your mother use the keybord
+        # variant = ",, neo_qwertz";
+        layout = "de";
+        variant = "neo_qwertz";
         options = "grp:win_space_toggle";
       };
 
