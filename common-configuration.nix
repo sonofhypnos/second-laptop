@@ -171,6 +171,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Haskell
+    haskell-language-server
+    ghc
+
+    #else
+    ausweisapp
     jetbrains.pycharm-community-src
     okular
     wget
