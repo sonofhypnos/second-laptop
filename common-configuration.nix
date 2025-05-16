@@ -43,6 +43,7 @@
   environment.pathsToLink = [ "/libexec" ];
 
   services = {
+
     libinput.enable = true;
 
     displayManager = {
@@ -71,22 +72,27 @@
         extraPackages = with pkgs; [ dmenu i3status i3lock i3blocks ];
       };
     };
-  };
 
-  # Enable CUPS to print documents.
-  #services.printing.enable = true;
+    # Enable the OpenSSH daemon.
+    openssh.settings.PasswordAuthentication = true;
+    openssh.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+    };
+
+    # Enable CUPS to print documents.
+    #printing.enable = true;
+  };
 
   # Enable sound.
   # rtkit is optional but recommended
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
@@ -204,12 +210,7 @@
       # require enabling PolKit integration on some desktop environments (e.g. Plasma).
       #polkitPolicyOwners = [ "tassilo" ];
     };
-    firefox.nativeMessagingHosts.tridactyl = true;
   };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.settings.PasswordAuthentication = true;
-  services.openssh.enable = true;
 
   nix = {
     #package = pkgs.nixFlakes;
