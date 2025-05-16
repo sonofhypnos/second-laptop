@@ -19,6 +19,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
+    nixfmt #For syntax highlighting in nix folders
     zotero
     signal-desktop
     zathura
