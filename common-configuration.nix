@@ -28,7 +28,6 @@
       "steam-run"
     ];
 
-
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";
 
@@ -40,7 +39,6 @@
       };
     })
   ];
-
 
   environment.pathsToLink = [ "/libexec" ];
 
@@ -90,7 +88,6 @@
     #jack.enable = true;
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
     tassilo = {
@@ -127,7 +124,7 @@
     };
 
     users.leo = {
-      imports = [./leo.nix];
+      imports = [ ./leo.nix ];
       home.stateVersion = "24.05";
       xsession.enable = true;
       xsession.windowManager.command = "startplasma-x11";
@@ -173,40 +170,42 @@
 
   programs = {
     neovim = {
-    enable = true; # this overwrites vim with neovim
-    viAlias = true;
-    #     plugins = [
-    #     {
-    #       plugin = nvim-colorizer-lua;
-    #       config = packadd! nvim-colorizer.lua
-    #       lua require 'colorizer'.setup();
-    #       #there is something about erros when using default packages: https://nixos.wiki/wiki/Neovim
-    #     }
-    #   ];
+      enable = true; # this overwrites vim with neovim
+      viAlias = true;
+      #     plugins = [
+      #     {
+      #       plugin = nvim-colorizer-lua;
+      #       config = packadd! nvim-colorizer.lua
+      #       lua require 'colorizer'.setup();
+      #       #there is something about erros when using default packages: https://nixos.wiki/wiki/Neovim
+      #     }
+      #   ];
 
     };
     zsh.enable = true;
     mtr.enable = true;
     gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
+      enable = true;
+      enableSSHSupport = true;
     };
     steam = {
       enable = true;
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+      remotePlay.openFirewall =
+        true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall =
+        true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall =
+        true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
     _1password.enable = true;
     _1password-gui = {
-        enable = true;
-        # Certain features, including CLI integration and system authentication support,
-        # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-        #polkitPolicyOwners = [ "tassilo" ];
-      };
+      enable = true;
+      # Certain features, including CLI integration and system authentication support,
+      # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+      #polkitPolicyOwners = [ "tassilo" ];
+    };
     firefox.nativeMessagingHosts.tridactyl = true;
   };
-
 
   # Enable the OpenSSH daemon.
   services.openssh.settings.PasswordAuthentication = true;
@@ -216,6 +215,5 @@
     #package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
   };
-
 
 }

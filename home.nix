@@ -19,7 +19,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
-    nixfmt #For syntax highlighting in nix folders
+    nixfmt # For syntax highlighting in nix folders
     zotero
     signal-desktop
     zathura
@@ -82,10 +82,10 @@
     zsh = {
       enable = true;
       #make tramp recognize the shell by disabeling nix
-      initExtraFirst =
-        ''[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
-SSH_AUTH_SOCK=~/.1password/agent.sock
-'';
+      initExtraFirst = ''
+        [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+        SSH_AUTH_SOCK=~/.1password/agent.sock
+      '';
       shellAliases = {
         ll = "ls -l";
         #    update = "sudo nixos-rebuild switch";
