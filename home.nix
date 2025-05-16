@@ -24,7 +24,7 @@
   # changes in each release.
   home.packages = with pkgs; [
     #tridactyl-native # add for native tridactyl support
-    nixfmt # For syntax highlighting in nix folders
+    nixfmt-classic # For syntax highlighting in nix folders
     zotero
     signal-desktop
     zathura
