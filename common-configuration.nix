@@ -60,7 +60,7 @@
         # variant = ",, neo_qwertz";
         layout = "de";
         variant = "neo_qwertz";
-        options = "grp:win_space_toggle";
+        options = "grp:alt_space_toggle";
       };
 
       desktopManager = {
