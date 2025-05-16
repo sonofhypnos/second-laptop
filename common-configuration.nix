@@ -28,20 +28,6 @@
       "steam-run"
     ];
 
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    # Certain features, including CLI integration and system authentication support,
-    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    #polkitPolicyOwners = [ "tassilo" ];
-  };
-
-  programs.steam = {
-   enable = true;
-   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers    
-  };
 
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";
@@ -55,19 +41,6 @@
     })
   ];
 
-  programs.neovim = {
-    enable = true; # this overwrites vim with neovim
-    viAlias = true;
-    #     plugins = [
-    #     {
-    #       plugin = nvim-colorizer-lua;
-    #       config = packadd! nvim-colorizer.lua
-    #       lua require 'colorizer'.setup();
-    #       #there is something about erros when using default packages: https://nixos.wiki/wiki/Neovim
-    #     }
-    #   ];
-
-  };
 
   environment.pathsToLink = [ "/libexec" ];
 
@@ -117,7 +90,6 @@
     #jack.enable = true;
   };
 
-  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
@@ -199,15 +171,42 @@
 
   environment.variables.TERMINAL = "urxvt";
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  programs = {
+    neovim = {
+    enable = true; # this overwrites vim with neovim
+    viAlias = true;
+    #     plugins = [
+    #     {
+    #       plugin = nvim-colorizer-lua;
+    #       config = packadd! nvim-colorizer.lua
+    #       lua require 'colorizer'.setup();
+    #       #there is something about erros when using default packages: https://nixos.wiki/wiki/Neovim
+    #     }
+    #   ];
+
+    };
+    zsh.enable = true;
+    mtr.enable = true;
+    gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    };
+    _1password.enable = true;
+    _1password-gui = {
+        enable = true;
+        # Certain features, including CLI integration and system authentication support,
+        # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+        #polkitPolicyOwners = [ "tassilo" ];
+      };
+    firefox.nativeMessagingHosts.tridactyl = true;
   };
 
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.settings.PasswordAuthentication = true;
