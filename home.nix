@@ -19,6 +19,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
+    tridactyl-native # add for native tridactyl support
     nixfmt # For syntax highlighting in nix folders
     zotero
     signal-desktop
