@@ -10,6 +10,10 @@
   home.username = "tassilo";
   home.homeDirectory = "/home/tassilo";
 
+  # This sets up the required symlink for Tridactyl to find native_main
+  home.file.".local/share/tridactyl/native_main".source =
+    "${pkgs.tridactyl-native}/bin/native_main";
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -19,7 +23,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
-    tridactyl-native # add for native tridactyl support
+    #tridactyl-native # add for native tridactyl support
     nixfmt # For syntax highlighting in nix folders
     zotero
     signal-desktop

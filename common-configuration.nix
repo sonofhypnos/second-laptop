@@ -175,6 +175,10 @@
   environment.variables.TERMINAL = "urxvt";
 
   programs = {
+    firefox = {
+      enable = true;
+      nativeMessagingHosts.packages = [ pkgs.tridactyl-native ];
+    };
     neovim = {
       enable = true; # this overwrites vim with neovim
       viAlias = true;
