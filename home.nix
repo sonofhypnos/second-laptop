@@ -82,7 +82,9 @@
       enable = true;
       #make tramp recognize the shell by disabeling nix
       initExtraFirst =
-        ''[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return'';
+        ''[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+SSH_AUTH_SOCK=~/.1password/agent.sock
+'';
       shellAliases = {
         ll = "ls -l";
         #    update = "sudo nixos-rebuild switch";
@@ -109,6 +111,7 @@
     };
 
   };
+
   home.sessionVariables = {
     TERMINAL = "kitty";
     DEFAULT_TERMINAL = "kitty";
