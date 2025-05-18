@@ -23,10 +23,8 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
-    npm # to install openai codex (and perhaps other javascript things in the future?)
     nixfmt-classic # For syntax highlighting in nix folders
     zotero
-    signal-desktop
     zathura
     google-chrome
     ranger

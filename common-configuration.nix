@@ -148,6 +148,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # These
+    codex
+    signal # Signal installed here, since it always wants a bleeding edge version
+
+    # NOTE: some of the below might be better installed via home-manager.
     # Haskell
     haskell-language-server
     ghc
