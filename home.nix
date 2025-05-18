@@ -86,10 +86,46 @@
 
     zsh = {
       enable = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      enableCompletion = true;
       #make tramp recognize the shell by disabeling nix
       initExtraFirst = ''
         [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
         SSH_AUTH_SOCK=~/.1password/agent.sock
+
+        # Home manager managed configuration
+
+        # Source shell files for consistent configuration
+        if [ -f "$HOME/.shell/functions.sh" ]; then
+          source "$HOME/.shell/functions.sh"
+        fi
+
+        if [ -f "$HOME/.shell/general.sh" ]; then
+          source "$HOME/.shell/general.sh"
+        fi
+
+        if [ -f "$HOME/.shell/paths.sh" ]; then
+          source "$HOME/.shell/paths.sh"
+        fi
+
+        if [ -f "$HOME/.shell/lazy_loaders.sh" ]; then
+          source "$HOME/.shell/lazy_loaders.sh"
+        fi
+
+        if [ -f "$HOME/.shell/aliases.sh" ]; then
+          source "$HOME/.shell/aliases.sh"
+        fi
+
+        # Source local configuration (for quick changes without rebuilding)
+        if [ -f "$HOME/.zshrc.local" ]; then
+          source "$HOME/.zshrc.local"
+        fi
+
+        # Oh-my-zsh settings
+        DISABLE_UPDATE_PROMPT="true"
+        DISABLE_MAGIC_FUNCTIONS="true"
+        AUTO_PUSHD="true" # enables directories being pushed on a stack
       '';
       shellAliases = {
         ll = "ls -l";
