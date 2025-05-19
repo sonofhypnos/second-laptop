@@ -23,6 +23,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
+    codex
     nixfmt-classic # For syntax highlighting in nix folders
     zotero
     zathura
@@ -68,6 +69,7 @@
   ];
 
   programs = {
+
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
@@ -88,7 +90,7 @@
       syntaxHighlighting.enable = true;
       enableCompletion = true;
       #make tramp recognize the shell by disabeling nix
-      initExtraFirst = ''
+      initContent = ''
         [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
         SSH_AUTH_SOCK=~/.1password/agent.sock
 

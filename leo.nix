@@ -25,5 +25,4 @@
     # Add KDE-specific settings
   };
 
-  home.stateVersion = "24.05";
 }

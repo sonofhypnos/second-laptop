@@ -51,6 +51,8 @@
       defaultSession = "none+i3";
     };
 
+    desktopManager.plasma6.enable = true;
+
     xserver = {
       enable = true;
 
@@ -61,11 +63,6 @@
         layout = "de";
         variant = "neo_qwertz";
         options = "grp:alt_space_toggle";
-      };
-
-      desktopManager = {
-        xterm.enable = false;
-        plasma5.enable = true;
       };
 
       # Enable touchpad support (enabled default in most desktopManager).
@@ -128,14 +125,19 @@
 
       programs.zsh.enable = true;
       imports = [ ./home.nix ];
-      home.stateVersion = "24.05";
+      home.stateVersion = "25.11";
+      home.enableNixpkgsReleaseCheck =
+        false; # We are getting a complaint here, even though we are running with unstable nix. This removes the complaint.
     };
 
     users.leo = {
       imports = [ ./leo.nix ];
-      home.stateVersion = "24.05";
+      home.stateVersion = "25.11";
       xsession.enable = true;
       xsession.windowManager.command = "startplasma-x11";
+
+      home.enableNixpkgsReleaseCheck =
+        false; # We are getting a complaint here, even though we are running with unstable nix. This removes the complaint.
     };
   };
 
@@ -148,7 +150,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
     codex
     signal-desktop # Signal installed here, since it always wants a bleeding edge version
 
@@ -204,6 +205,7 @@
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
+      pinentryPackage = pkgs.pinentry-curses;
     };
     steam = {
       enable = true;
