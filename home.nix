@@ -3,7 +3,7 @@
 
 { config, lib, pkgs, ... }: {
 
-  imports = [ ./1password.nix ];
+  imports = [ ./1password.nix ./espanso-no-yml.nix ];
 
   home.stateVersion = "25.11";
   # Home Manager needs a bit of information about you and the
@@ -24,7 +24,6 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
-    espanso
     codex
     nixfmt-classic # For syntax highlighting in nix folders
     zotero
@@ -37,7 +36,6 @@
     zsh-syntax-highlighting
     trash-cli
     discord
-    dropbox
     emacs
     # The below is to install the repository git-remote-dropbox
     (python3Packages.buildPythonApplication {
@@ -164,6 +162,8 @@
     dropbox.enable = true;
     dropbox.path = "/home/tassilo/Dropbox/";
     espanso.enable = true;
+    # espanso.configs = { };
+    # espanso.matches = { };
 
   };
 }
