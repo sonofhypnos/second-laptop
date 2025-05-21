@@ -162,8 +162,7 @@
     dropbox.enable = true;
     dropbox.path = "/home/tassilo/Dropbox/";
     espanso.enable = true;
-    # espanso.configs = { };
-    # espanso.matches = { };
-
+    espanso.configs = { };
+    espanso.matches = { };
   };
 }
