@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: {
   home.username = "leo";
   home.homeDirectory = "/home/leo";
+  home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
     firefox

@@ -125,7 +125,6 @@
 
       programs.zsh.enable = true;
       imports = [ ./home.nix ];
-      home.stateVersion = "25.11";
       home.enableNixpkgsReleaseCheck =
         false; # We are getting a complaint here, even though we are running with unstable nix. This removes the complaint.
     };

@@ -5,6 +5,9 @@
 
   imports = [ ./1password.nix ];
 
+  home.stateVersion = "25.11";
+  # home.enableNixpkgsReleaseCheck =
+  #   false; # We are getting a complaint here, even though we are running with unstable nix. This removes the complaint.
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "tassilo";
