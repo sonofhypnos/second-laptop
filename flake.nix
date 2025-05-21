@@ -29,5 +29,14 @@
         # with a specific type signature that return packages)
         #specialArgs = { codexCli = codex.packages.${system}.codex-cli; };
       };
+      homeConfigurations.tassilo = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree =
+            true; # FIXME: possibly refactor restrictions in common-configuration to apply here as well?
+        };
+        modules = [ ./home.nix ];
+        extraSpecialArgs = { system = "x86_64-linux"; };
+      };
     };
 }
