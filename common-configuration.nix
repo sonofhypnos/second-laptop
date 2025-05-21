@@ -12,6 +12,7 @@
     dates = "weekly";
     options = "--delete-older-than 30d -d";
   };
+  nix.package = pkgs.lix; # Saw claim lix is faster. Should measure that though.
 
   # Enable the unfree 1Password packages
   nixpkgs.config.allowUnfreePredicate = pkg:
