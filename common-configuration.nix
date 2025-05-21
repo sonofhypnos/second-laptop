@@ -125,8 +125,6 @@
 
       programs.zsh.enable = true;
       imports = [ ./home.nix ];
-      home.enableNixpkgsReleaseCheck =
-        false; # We are getting a complaint here, even though we are running with unstable nix. This removes the complaint.
     };
 
     users.leo = {
@@ -135,8 +133,6 @@
       xsession.enable = true;
       xsession.windowManager.command = "startplasma-x11";
 
-      home.enableNixpkgsReleaseCheck =
-        false; # We are getting a complaint here, even though we are running with unstable nix. This removes the complaint.
     };
   };
 
