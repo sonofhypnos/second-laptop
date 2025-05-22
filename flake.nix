@@ -34,6 +34,9 @@
           system = "x86_64-linux";
           config.allowUnfree =
             true; # FIXME: possibly refactor restrictions in common-configuration to apply here as well?
+          overlays = [
+            (final: prev: { x11trace = final.callPackage ./x11trace.nix { }; })
+          ];
         };
         modules = [ ./home.nix ];
         extraSpecialArgs = { system = "x86_64-linux"; };

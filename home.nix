@@ -24,6 +24,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.packages = with pkgs; [
+    x11trace
     anki
     codex
     nixfmt-classic # For syntax highlighting in nix folders
