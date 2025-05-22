@@ -26,6 +26,14 @@ Which will update the lock file (so this would be advisable if say signal needs 
 - to connect to wifi:
   use the cli tool `nmtui`
 
+# Documentation:
+man configuration.nix
+man 5 configuration.nix
+man nix
+man nix-language
+nix repl -> :doc lib
+nix search nixpkgs nginx (info on nginx)
+
 # TODOS
 - setup a software for screenshots
 
