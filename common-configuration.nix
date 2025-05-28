@@ -98,7 +98,7 @@
   users.users = {
     tassilo = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
 
       shell = pkgs.zsh;
       openssh.authorizedKeys.keys = [
@@ -109,12 +109,12 @@
     };
     natalie = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "networkmanager"];
     };
 
     leo = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "networkmanager"];
     };
   };
 
