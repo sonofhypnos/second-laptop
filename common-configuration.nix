@@ -109,12 +109,12 @@
     };
     natalie = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager"];
+      extraGroups = [ "wheel" "networkmanager" ];
     };
 
     leo = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager"];
+      extraGroups = [ "wheel" "networkmanager" ];
     };
   };
 
@@ -217,7 +217,8 @@
       enable = true;
       # Certain features, including CLI integration and system authentication support,
       # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-      #polkitPolicyOwners = [ "tassilo" ];
+      # Perhaps this is also useful if I want wifi passwords to stay persistent?
+      polkitPolicyOwners = [ "tassilo" ];
     };
   };
 
